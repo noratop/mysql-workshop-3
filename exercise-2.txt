@@ -13,3 +13,8 @@ Query OK, 10 rows affected (0.01 sec)
 Records: 10  Duplicates: 0  Warnings: 0
 
 mysql> source data/import-entry.sql
+Query OK, 100 rows affected (0.01 sec)
+Records: 100  Duplicates: 0  Warnings: 0
+
+Query OK, 100 rows affected (0.00 sec)
+Records: 100  Duplicates: 0  Warnings: 0
