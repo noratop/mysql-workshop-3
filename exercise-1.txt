@@ -1,0 +1,124 @@
+Exercise 1
+
+Reflect the data model shown in schema/addressbook_normalized.png within database decodemtl_addressbook
+Account.id is a primary auto-increment key
+AddressBook.id is a primary auto-increment key
+Entry.id is a primary auto-increment key
+Entry.type is an ENUM column permitting phone, address and electronic-mail
+Address.id is a primary auto-increment key
+Address.type is an ENUM column permitting home, work and other
+Email.id is a primary auto-increment key
+Email.type is an ENUM column permitting home, work and other
+Phone.id is a primary auto-increment key
+Phone.type is an ENUM column permitting home, work and other
+Phone.subtype is an ENUM column permitting landline, cellular and fax
+
+==========================================================================================
+
+mysql> source import-table-structure.sql
+Query OK, 6 rows affected (0.03 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> use decodemtl_addressbook;
+Database changed
+mysql> describe Account;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| email      | varchar(255) | NO   |     | NULL    |                |
+| password   | varchar(40)  | NO   |     | NULL    |                |
+| createdOn  | datetime     | NO   |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> describe AddressBook;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| accountId  | int(11)      | NO   |     | NULL    |                |
+| name       | varchar(255) | NO   |     | NULL    |                |
+| createdOn  | datetime     | NO   |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe Entry;
++---------------+-------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                      | Null | Key | Default | Extra          |
++---------------+-------------------------------------------+------+-----+---------+----------------+
+| id            | int(11)                                   | NO   | PRI | NULL    | auto_increment |
+| addressBookId | int(11)                                   | NO   |     | NULL    |                |
+| firstName     | varchar(255)                              | NO   |     | NULL    |                |
+| lastName      | varchar(255)                              | YES  |     | NULL    |                |
+| birthday      | datetime                                  | YES  |     | NULL    |                |
+| type          | enum('phone','address','electronic-mail') | NO   |     | NULL    |                |
++---------------+-------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> describe Phone;
++---------+-----------------------------------+------+-----+---------+----------------+
+| Field   | Type                              | Null | Key | Default | Extra          |
++---------+-----------------------------------+------+-----+---------+----------------+
+| id      | int(11)                           | NO   | PRI | NULL    | auto_increment |
+| entryId | int(11)                           | NO   |     | NULL    |                |
+| type    | enum('home','work','other')       | NO   |     | NULL    |                |
+| subtype | enum('landline','cellular','fax') | NO   |     | NULL    |                |
+| content | varchar(255)                      | NO   |     | NULL    |                |
++---------+-----------------------------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> describe Address;                                                               
++--------------+-----------------------------+------+-----+---------+----------------+
+| Field        | Type                        | Null | Key | Default | Extra          |
++--------------+-----------------------------+------+-----+---------+----------------+
+| id           | int(11)                     | NO   | PRI | NULL    | auto_increment |
+| entryId      | int(11)                     | NO   |     | NULL    |                |
+| type         | enum('home','work','other') | NO   |     | NULL    |                |
+| addressLine1 | varchar(255)                | NO   |     | NULL    |                |
+| addressLine2 | varchar(255)                | YES  |     | NULL    |                |
+| city         | varchar(255)                | NO   |     | NULL    |                |
+| province     | varchar(128)                | NO   |     | NULL    |                |
+| country      | varchar(128)                | NO   |     | NULL    |                |
+| postalCode   | varchar(10)                 | NO   |     | NULL    |                |
++--------------+-----------------------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
+
+mysql> describe Email;                                                                 
++---------+-----------------------------+------+-----+---------+----------------+
+| Field   | Type                        | Null | Key | Default | Extra          |
++---------+-----------------------------+------+-----+---------+----------------+
+| id      | int(11)                     | NO   | PRI | NULL    | auto_increment |
+| entryId | int(11)                     | NO   |     | NULL    |                |
+| type    | enum('home','work','other') | NO   |     | NULL    |                |
+| content | varchar(255)                | NO   |     | NULL    |                |
++---------+-----------------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
