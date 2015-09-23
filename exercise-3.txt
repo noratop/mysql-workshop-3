@@ -1,0 +1,261 @@
+Exercise 3
+
+List all of the countries with respective occurence totals in DESC order
+Country names should all appear lowercase
+===========================================================================
+
+mysql> SELECT LOWER(country), COUNT(*) AS occurences FROM Address GROUP BY country;                                             
++----------------------------------------------+------------+
+| LOWER(country)                               | occurences |
++----------------------------------------------+------------+
+| afghanistan                                  |         30 |
+| albania                                      |         27 |
+| algeria                                      |         30 |
+| american samoa                               |         24 |
+| andorra                                      |         45 |
+| angola                                       |         18 |
+| anguilla                                     |         36 |
+| antarctica                                   |         30 |
+| antigua and barbuda                          |         30 |
+| argentina                                    |         45 |
+| armenia                                      |         27 |
+| aruba                                        |         39 |
+| australia                                    |         30 |
+| austria                                      |         33 |
+| azerbaijan                                   |         24 |
+| bahamas                                      |         21 |
+| bahrain                                      |         21 |
+| bangladesh                                   |         27 |
+| barbados                                     |         21 |
+| belarus                                      |         33 |
+| belgium                                      |         27 |
+| belize                                       |         33 |
+| benin                                        |         30 |
+| bermuda                                      |         24 |
+| bhutan                                       |         24 |
+| bolivia                                      |         18 |
+| bonaire, sint eustatius and saba             |         27 |
+| bosnia and herzegovina                       |         27 |
+| botswana                                     |         36 |
+| bouvet island                                |         33 |
+| brazil                                       |         42 |
+| british indian ocean territory               |         27 |
+| brunei                                       |         24 |
+| bulgaria                                     |         27 |
+| burkina faso                                 |         18 |
+| burundi                                      |         33 |
+| cambodia                                     |         33 |
+| cameroon                                     |         27 |
+| canada                                       |         45 |
+| cape verde                                   |         30 |
+| cayman islands                               |         30 |
+| central african republic                     |         24 |
+| chad                                         |         30 |
+| chile                                        |         24 |
+| china                                        |         18 |
+| christmas island                             |         36 |
+| cocos (keeling) islands                      |         39 |
+| colombia                                     |         24 |
+| comoros                                      |         24 |
+| congo (brazzaville)                          |         33 |
+| congo, the democratic republic of the        |         42 |
+| cook islands                                 |         39 |
+| costa rica                                   |         30 |
+| croatia                                      |         18 |
+| cuba                                         |         27 |
+| curaçao                                      |         45 |
+| cyprus                                       |         27 |
+| czech republic                               |         24 |
+| côte d'ivoire (ivory coast)                  |         24 |
+| denmark                                      |         18 |
+| djibouti                                     |         33 |
+| dominica                                     |         42 |
+| dominican republic                           |         30 |
+| ecuador                                      |         21 |
+| egypt                                        |         21 |
+| el salvador                                  |         24 |
+| equatorial guinea                            |         39 |
+| eritrea                                      |         24 |
+| estonia                                      |         24 |
+| ethiopia                                     |         42 |
+| falkland islands                             |         21 |
+| faroe islands                                |         33 |
+| fiji                                         |         21 |
+| finland                                      |         36 |
+| france                                       |         27 |
+| french guiana                                |         18 |
+| french polynesia                             |         39 |
+| french southern territories                  |         33 |
+| gabon                                        |         21 |
+| gambia                                       |         27 |
+| georgia                                      |         24 |
+| germany                                      |         24 |
+| ghana                                        |         30 |
+| gibraltar                                    |         27 |
+| greece                                       |         24 |
+| greenland                                    |         27 |
+| grenada                                      |         36 |
+| guadeloupe                                   |         18 |
+| guam                                         |         30 |
+| guatemala                                    |         33 |
+| guernsey                                     |         33 |
+| guinea                                       |         36 |
+| guinea-bissau                                |         36 |
+| guyana                                       |         27 |
+| haiti                                        |         15 |
+| heard island and mcdonald islands            |         21 |
+| holy see (vatican city state)                |         24 |
+| honduras                                     |         24 |
+| hong kong                                    |         15 |
+| hungary                                      |         27 |
+| iceland                                      |          9 |
+| india                                        |         33 |
+| indonesia                                    |         30 |
+| iran                                         |         21 |
+| iraq                                         |         24 |
+| ireland                                      |         36 |
+| isle of man                                  |         36 |
+| israel                                       |         27 |
+| italy                                        |         24 |
+| jamaica                                      |         12 |
+| japan                                        |         24 |
+| jersey                                       |         30 |
+| jordan                                       |         36 |
+| kazakhstan                                   |         36 |
+| kenya                                        |         21 |
+| kiribati                                     |         33 |
+| korea, north                                 |         24 |
+| korea, south                                 |         15 |
+| kuwait                                       |         30 |
+| kyrgyzstan                                   |         30 |
+| laos                                         |         18 |
+| latvia                                       |         33 |
+| lebanon                                      |         45 |
+| lesotho                                      |         33 |
+| liberia                                      |         39 |
+| libya                                        |         18 |
+| liechtenstein                                |         15 |
+| lithuania                                    |         39 |
+| luxembourg                                   |         33 |
+| macao                                        |         21 |
+| macedonia                                    |         24 |
+| madagascar                                   |         30 |
+| malawi                                       |         18 |
+| malaysia                                     |         36 |
+| maldives                                     |         24 |
+| mali                                         |         24 |
+| malta                                        |         21 |
+| marshall islands                             |         24 |
+| martinique                                   |         27 |
+| mauritania                                   |         21 |
+| mauritius                                    |          9 |
+| mayotte                                      |         39 |
+| mexico                                       |         33 |
+| micronesia                                   |         30 |
+| moldova                                      |         18 |
+| monaco                                       |         15 |
+| mongolia                                     |         21 |
+| montenegro                                   |         15 |
+| montserrat                                   |         27 |
+| morocco                                      |         18 |
+| mozambique                                   |         54 |
+| myanmar                                      |         33 |
+| namibia                                      |         18 |
+| nauru                                        |         15 |
+| nepal                                        |         15 |
+| netherlands                                  |         42 |
+| new caledonia                                |         24 |
+| new zealand                                  |         18 |
+| nicaragua                                    |         27 |
+| niger                                        |          6 |
+| nigeria                                      |         24 |
+| niue                                         |         21 |
+| norfolk island                               |         39 |
+| northern mariana islands                     |         24 |
+| norway                                       |         21 |
+| oman                                         |         36 |
+| pakistan                                     |         21 |
+| palau                                        |         33 |
+| palestine, state of                          |         15 |
+| panama                                       |         33 |
+| papua new guinea                             |         24 |
+| paraguay                                     |         18 |
+| peru                                         |         33 |
+| philippines                                  |         33 |
+| pitcairn islands                             |         24 |
+| poland                                       |         21 |
+| portugal                                     |         18 |
+| puerto rico                                  |         24 |
+| qatar                                        |         33 |
+| reunion                                      |         27 |
+| romania                                      |         18 |
+| russian federation                           |         27 |
+| rwanda                                       |         30 |
+| saint barthélemy                             |         24 |
+| saint helena, ascension and tristan da cunha |         48 |
+| saint kitts and nevis                        |         36 |
+| saint lucia                                  |         33 |
+| saint martin                                 |         21 |
+| saint pierre and miquelon                    |         27 |
+| saint vincent and the grenadines             |          9 |
+| samoa                                        |         15 |
+| san marino                                   |         33 |
+| sao tome and principe                        |         24 |
+| saudi arabia                                 |          9 |
+| senegal                                      |         36 |
+| serbia                                       |         27 |
+| seychelles                                   |         39 |
+| sierra leone                                 |         21 |
+| singapore                                    |         21 |
+| sint maarten                                 |         18 |
+| slovakia                                     |         39 |
+| slovenia                                     |         27 |
+| solomon islands                              |         24 |
+| somalia                                      |         18 |
+| south africa                                 |         30 |
+| south georgia and the south sandwich islands |         21 |
+| south sudan                                  |         24 |
+| spain                                        |         18 |
+| sri lanka                                    |         42 |
+| sudan                                        |         18 |
+| suriname                                     |         27 |
+| svalbard and jan mayen islands               |         18 |
+| swaziland                                    |         27 |
+| sweden                                       |         15 |
+| switzerland                                  |         39 |
+| syria                                        |         36 |
+| taiwan                                       |         30 |
+| tajikistan                                   |         27 |
+| tanzania                                     |         33 |
+| thailand                                     |         45 |
+| timor-leste                                  |         30 |
+| togo                                         |         18 |
+| tokelau                                      |         30 |
+| tonga                                        |         39 |
+| trinidad and tobago                          |         15 |
+| tunisia                                      |         30 |
+| turkey                                       |         36 |
+| turkmenistan                                 |         27 |
+| turks and caicos islands                     |         33 |
+| tuvalu                                       |         27 |
+| uganda                                       |         24 |
+| ukraine                                      |         33 |
+| united arab emirates                         |         42 |
+| united kingdom (great britain)               |         42 |
+| united states                                |         30 |
+| united states minor outlying islands         |         45 |
+| uruguay                                      |         27 |
+| uzbekistan                                   |         24 |
+| vanuatu                                      |         33 |
+| venezuela                                    |         39 |
+| viet nam                                     |         18 |
+| virgin islands, british                      |         27 |
+| virgin islands, united states                |         36 |
+| wallis and futuna                            |         45 |
+| western sahara                               |         27 |
+| yemen                                        |         24 |
+| zambia                                       |         30 |
+| zimbabwe                                     |         30 |
+| åland islands                                |         33 |
++----------------------------------------------+------------+
+249 rows in set (0.01 sec)
