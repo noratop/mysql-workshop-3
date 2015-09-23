@@ -89,11 +89,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `decodemtl_addressbook`.`ElectronicEmail`
+-- Table `decodemtl_addressbook`.`ElectronicMail`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `decodemtl_addressbook`.`ElectronicEmail` ;
+DROP TABLE IF EXISTS `decodemtl_addressbook`.`ElectronicMail` ;
 
-CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`ElectronicEmail` (
+CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`ElectronicMail` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `entryId` INT NOT NULL COMMENT '',
   `type` ENUM('home', 'work', 'other') NOT NULL COMMENT '',
