@@ -122,3 +122,29 @@ mysql> describe Email;
 | content | varchar(255)                | NO   |     | NULL    |                |
 +---------+-----------------------------+------+-----+---------+----------------+
 4 rows in set (0.00 sec)
+
+mysql> DROP TABLE IF EXISTS `decodemtl_addressbook`.`ElectronicEmail` ;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> 
+mysql> CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`ElectronicEmail` (
+    ->   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
+    ->   `entryId` INT NOT NULL COMMENT '',
+    ->   `type` ENUM('home', 'work', 'other') NOT NULL COMMENT '',
+    ->   `content` VARCHAR(255) NOT NULL COMMENT '',
+    ->   PRIMARY KEY (`id`)  COMMENT '')
+    -> ENGINE = InnoDB;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| Address                         |
+| AddressBook                     |
+| ElectronicEmail                 |
+| Entry                           |
+| Phone                           |
++---------------------------------+
+6 rows in set (0.00 sec)
