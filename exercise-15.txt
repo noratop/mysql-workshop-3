@@ -1,0 +1,15 @@
+Exercise 15
+
+Transform all work emails into home emails and vice versa
+=================================================================
+
+mysql> ALTER TABLE ElectronicMail ADD COLUMN tempUpdated tinyint; 
+Query OK, 2300 rows affected (0.06 sec)
+Records: 2300  Duplicates: 0  Warnings: 0
+
+
+mysql> UPDATE ElectronicMail SET tempUpdated = 1, type ='home' WHERE type = 'work';
+
+mysql> UPDATE ElectronicMail SET type ='work' WHERE type = 'home' AND tempUpdated IS NULL;
+Query OK, 920 rows affected (0.01 sec)
+Rows matched: 920  Changed: 920  Warnings: 0
